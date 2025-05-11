@@ -96,6 +96,10 @@ public class PlayerMain : MonoBehaviour
             StartCoroutine(RestartSceneAfterDelay(2f));
 
         }
+        if (collision.gameObject.CompareTag("AutoBullet"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
     }
 

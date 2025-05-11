@@ -146,12 +146,14 @@ public class DialogMain : MonoBehaviour
         {
             canTalk = true;
             TextController.gameObject.SetActive(true);
+            Dialog.SetActive(false);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Gate"))
+        if (collision.CompareTag("Gate") && !isTyping && !Dialog.activeSelf)
+
         {
             canTalk = false;
             TextController.gameObject.SetActive(false);
